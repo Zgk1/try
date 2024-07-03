@@ -1,0 +1,909 @@
+Performing C SOURCE FILE Test CMAKE_HAVE_LIBC_PTHREAD failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_6891e/fast && /usr/bin/make  -f CMakeFiles/cmTC_6891e.dir/build.make CMakeFiles/cmTC_6891e.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_6891e.dir/src.c.o
+/usr/bin/cc -DCMAKE_HAVE_LIBC_PTHREAD  -fPIE -o CMakeFiles/cmTC_6891e.dir/src.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/src.c
+Linking C executable cmTC_6891e
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6891e.dir/link.txt --verbose=1
+/usr/bin/cc CMakeFiles/cmTC_6891e.dir/src.c.o -o cmTC_6891e 
+CMakeFiles/cmTC_6891e.dir/src.c.o：在函数‘main’中：
+src.c:(.text+0x3e)：对‘pthread_create’未定义的引用
+src.c:(.text+0x4a)：对‘pthread_detach’未定义的引用
+src.c:(.text+0x56)：对‘pthread_cancel’未定义的引用
+src.c:(.text+0x67)：对‘pthread_join’未定义的引用
+src.c:(.text+0x7b)：对‘pthread_atfork’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_6891e.dir/build.make:98: recipe for target 'cmTC_6891e' failed
+make[1]: *** [cmTC_6891e] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_6891e/fast' failed
+make: *** [cmTC_6891e/fast] Error 2
+
+
+Source file was:
+#include <pthread.h>
+
+static void* test_func(void* data)
+{
+  return data;
+}
+
+int main(void)
+{
+  pthread_t thread;
+  pthread_create(&thread, NULL, test_func, NULL);
+  pthread_detach(thread);
+  pthread_cancel(thread);
+  pthread_join(thread, NULL);
+  pthread_atfork(NULL, NULL, NULL);
+  pthread_exit(NULL);
+
+  return 0;
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_795f8/fast && /usr/bin/make  -f CMakeFiles/cmTC_795f8.dir/build.make CMakeFiles/cmTC_795f8.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_795f8.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create -fPIE -o CMakeFiles/cmTC_795f8.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_795f8
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_795f8.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create CMakeFiles/cmTC_795f8.dir/CheckFunctionExists.c.o -o cmTC_795f8  -lpthreads 
+/usr/bin/ld: 找不到 -lpthreads
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_795f8.dir/build.make:98: recipe for target 'cmTC_795f8' failed
+make[1]: *** [cmTC_795f8] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_795f8/fast' failed
+make: *** [cmTC_795f8/fast] Error 2
+
+
+
+Determining if the function res_servicename exists in the resolv failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_54e01/fast && /usr/bin/make  -f CMakeFiles/cmTC_54e01.dir/build.make CMakeFiles/cmTC_54e01.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_54e01.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=res_servicename -fPIE -o CMakeFiles/cmTC_54e01.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_54e01
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54e01.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=res_servicename CMakeFiles/cmTC_54e01.dir/CheckFunctionExists.c.o -o cmTC_54e01  -lresolv 
+CMakeFiles/cmTC_54e01.dir/CheckFunctionExists.c.o：在函数‘main’中：
+CheckFunctionExists.c:(.text+0x10)：对‘res_servicename’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_54e01.dir/build.make:98: recipe for target 'cmTC_54e01' failed
+make[1]: *** [cmTC_54e01] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_54e01/fast' failed
+make: *** [cmTC_54e01/fast] Error 2
+
+
+
+Determining if the function gethostbyname exists in the socket failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_a6fef/fast && /usr/bin/make  -f CMakeFiles/cmTC_a6fef.dir/build.make CMakeFiles/cmTC_a6fef.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_a6fef.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname -fPIE -o CMakeFiles/cmTC_a6fef.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_a6fef
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a6fef.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=gethostbyname CMakeFiles/cmTC_a6fef.dir/CheckFunctionExists.c.o -o cmTC_a6fef  -lsocket 
+/usr/bin/ld: 找不到 -lsocket
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_a6fef.dir/build.make:98: recipe for target 'cmTC_a6fef' failed
+make[1]: *** [cmTC_a6fef] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_a6fef/fast' failed
+make: *** [cmTC_a6fef/fast] Error 2
+
+
+
+Determining if the function socket exists in the socket failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_15018/fast && /usr/bin/make  -f CMakeFiles/cmTC_15018.dir/build.make CMakeFiles/cmTC_15018.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_15018.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=socket -fPIE -o CMakeFiles/cmTC_15018.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_15018
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_15018.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=socket CMakeFiles/cmTC_15018.dir/CheckFunctionExists.c.o -o cmTC_15018  -lsocket 
+/usr/bin/ld: 找不到 -lsocket
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_15018.dir/build.make:98: recipe for target 'cmTC_15018' failed
+make[1]: *** [cmTC_15018] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_15018/fast' failed
+make: *** [cmTC_15018/fast] Error 2
+
+
+
+Determining if files socket.h exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_0a974/fast && /usr/bin/make  -f CMakeFiles/cmTC_0a974.dir/build.make CMakeFiles/cmTC_0a974.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_0a974.dir/HAVE_SOCKET_H.c.o
+/usr/bin/cc   -fPIE -o CMakeFiles/cmTC_0a974.dir/HAVE_SOCKET_H.c.o -c /home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_SOCKET_H.c
+/home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_SOCKET_H.c:2:10: fatal error: socket.h: 没有那个文件或目录
+ #include <socket.h>
+          ^~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_0a974.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_0a974.dir/HAVE_SOCKET_H.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_0a974.dir/HAVE_SOCKET_H.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_0a974/fast' failed
+make: *** [cmTC_0a974/fast] Error 2
+
+
+Source:
+/* */
+#include <socket.h>
+
+
+int main(void){return 0;}
+
+Determining if files winsock2.h;windows.h exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_93fb9/fast && /usr/bin/make  -f CMakeFiles/cmTC_93fb9.dir/build.make CMakeFiles/cmTC_93fb9.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_93fb9.dir/HAVE_WINSOCK2_H.c.o
+/usr/bin/cc   -fPIE -o CMakeFiles/cmTC_93fb9.dir/HAVE_WINSOCK2_H.c.o -c /home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_WINSOCK2_H.c
+/home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_WINSOCK2_H.c:2:10: fatal error: winsock2.h: 没有那个文件或目录
+ #include <winsock2.h>
+          ^~~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_93fb9.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_93fb9.dir/HAVE_WINSOCK2_H.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_93fb9.dir/HAVE_WINSOCK2_H.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_93fb9/fast' failed
+make: *** [cmTC_93fb9/fast] Error 2
+
+
+Source:
+/* */
+#include <winsock2.h>
+#include <windows.h>
+
+
+int main(void){return 0;}
+
+Determining if files winsock2.h;ws2tcpip.h;windows.h exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_6f13d/fast && /usr/bin/make  -f CMakeFiles/cmTC_6f13d.dir/build.make CMakeFiles/cmTC_6f13d.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_6f13d.dir/HAVE_WS2TCPIP_H.c.o
+/usr/bin/cc   -fPIE -o CMakeFiles/cmTC_6f13d.dir/HAVE_WS2TCPIP_H.c.o -c /home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_WS2TCPIP_H.c
+/home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_WS2TCPIP_H.c:2:10: fatal error: winsock2.h: 没有那个文件或目录
+ #include <winsock2.h>
+          ^~~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_6f13d.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_6f13d.dir/HAVE_WS2TCPIP_H.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_6f13d.dir/HAVE_WS2TCPIP_H.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_6f13d/fast' failed
+make: *** [cmTC_6f13d/fast] Error 2
+
+
+Source:
+/* */
+#include <winsock2.h>
+#include <ws2tcpip.h>
+#include <windows.h>
+
+
+int main(void){return 0;}
+
+Determining if files winsock.h;windows.h exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_ffac2/fast && /usr/bin/make  -f CMakeFiles/cmTC_ffac2.dir/build.make CMakeFiles/cmTC_ffac2.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_ffac2.dir/HAVE_WINSOCK_H.c.o
+/usr/bin/cc   -fPIE -o CMakeFiles/cmTC_ffac2.dir/HAVE_WINSOCK_H.c.o -c /home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_WINSOCK_H.c
+/home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_WINSOCK_H.c:2:10: fatal error: winsock.h: 没有那个文件或目录
+ #include <winsock.h>
+          ^~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_ffac2.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_ffac2.dir/HAVE_WINSOCK_H.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ffac2.dir/HAVE_WINSOCK_H.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_ffac2/fast' failed
+make: *** [cmTC_ffac2/fast] Error 2
+
+
+Source:
+/* */
+#include <winsock.h>
+#include <windows.h>
+
+
+int main(void){return 0;}
+
+Determining if files windows.h exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e3fa2/fast && /usr/bin/make  -f CMakeFiles/cmTC_e3fa2.dir/build.make CMakeFiles/cmTC_e3fa2.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_e3fa2.dir/HAVE_WINDOWS_H.c.o
+/usr/bin/cc   -fPIE -o CMakeFiles/cmTC_e3fa2.dir/HAVE_WINDOWS_H.c.o -c /home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_WINDOWS_H.c
+/home/zgk/grpc/build/CMakeFiles/CheckIncludeFiles/HAVE_WINDOWS_H.c:2:10: fatal error: windows.h: 没有那个文件或目录
+ #include <windows.h>
+          ^~~~~~~~~~~
+compilation terminated.
+CMakeFiles/cmTC_e3fa2.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_e3fa2.dir/HAVE_WINDOWS_H.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e3fa2.dir/HAVE_WINDOWS_H.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_e3fa2/fast' failed
+make: *** [cmTC_e3fa2/fast] Error 2
+
+
+Source:
+/* */
+#include <windows.h>
+
+
+int main(void){return 0;}
+
+Performing C SOURCE FILE Test HAVE_TYPE_SOCKET failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_b721a/fast && /usr/bin/make  -f CMakeFiles/cmTC_b721a.dir/build.make CMakeFiles/cmTC_b721a.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_b721a.dir/src.c.o
+/usr/bin/cc -DHAVE_TYPE_SOCKET -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_b721a.dir/src.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/src.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/src.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/src.c:26:4: error: unknown type name ‘SOCKET’; did you mean ‘LOCK_EX’?
+    SOCKET var_exists;
+    ^~~~~~
+    LOCK_EX
+CMakeFiles/cmTC_b721a.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_b721a.dir/src.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_b721a.dir/src.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_b721a/fast' failed
+make: *** [cmTC_b721a/fast] Error 2
+
+
+Source file was:
+
+		#include <stdio.h>
+		#include <stdlib.h>
+	
+		#include <stdbool.h>
+		#include <sys/types.h>
+		#include <arpa/inet.h>
+		#include <arpa/nameser.h>
+		#include <netdb.h>
+		#include <net/if.h>
+		#include <netinet/in.h>
+		#include <netinet/tcp.h>
+		#include <signal.h>
+		#include <stdlib.h>
+		#include <string.h>
+		#include <strings.h>
+		#include <sys/ioctl.h>
+		#include <sys/select.h>
+		#include <sys/socket.h>
+		#include <sys/time.h>
+		#include <sys/uio.h>
+		#include <time.h>
+		#include <fcntl.h>
+		#include <unistd.h>
+		int main() {
+			SOCKET var_exists;
+			(void)var_exists;
+			return 0;
+		}
+	
+Determining if the SO_NONBLOCK exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_95ac2/fast && /usr/bin/make  -f CMakeFiles/cmTC_95ac2.dir/build.make CMakeFiles/cmTC_95ac2.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_95ac2.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_95ac2.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘SO_NONBLOCK’ undeclared (first use in this function); did you mean ‘O_NONBLOCK’?
+   return ((int*)(&SO_NONBLOCK))[argc];
+                   ^~~~~~~~~~~
+                   O_NONBLOCK
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_95ac2.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_95ac2.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_95ac2.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_95ac2/fast' failed
+make: *** [cmTC_95ac2/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef SO_NONBLOCK
+  return ((int*)(&SO_NONBLOCK))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the bitncmp exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_ef030/fast && /usr/bin/make  -f CMakeFiles/cmTC_ef030.dir/build.make CMakeFiles/cmTC_ef030.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_ef030.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_ef030.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘bitncmp’ undeclared (first use in this function); did you mean ‘bcmp’?
+   return ((int*)(&bitncmp))[argc];
+                   ^~~~~~~
+                   bcmp
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_ef030.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_ef030.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_ef030.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_ef030/fast' failed
+make: *** [cmTC_ef030/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef bitncmp
+  return ((int*)(&bitncmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the closesocket exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_64166/fast && /usr/bin/make  -f CMakeFiles/cmTC_64166.dir/build.make CMakeFiles/cmTC_64166.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_64166.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_64166.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘closesocket’ undeclared (first use in this function); did you mean ‘socket’?
+   return ((int*)(&closesocket))[argc];
+                   ^~~~~~~~~~~
+                   socket
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_64166.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_64166.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_64166.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_64166/fast' failed
+make: *** [cmTC_64166/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef closesocket
+  return ((int*)(&closesocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the CloseSocket exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_4ea8e/fast && /usr/bin/make  -f CMakeFiles/cmTC_4ea8e.dir/build.make CMakeFiles/cmTC_4ea8e.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_4ea8e.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_4ea8e.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘CloseSocket’ undeclared (first use in this function); did you mean ‘socket’?
+   return ((int*)(&CloseSocket))[argc];
+                   ^~~~~~~~~~~
+                   socket
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_4ea8e.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_4ea8e.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_4ea8e.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_4ea8e/fast' failed
+make: *** [cmTC_4ea8e/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef CloseSocket
+  return ((int*)(&CloseSocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the inet_net_pton exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_aa6a3/fast && /usr/bin/make  -f CMakeFiles/cmTC_aa6a3.dir/build.make CMakeFiles/cmTC_aa6a3.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_aa6a3.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_aa6a3.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_aa6a3
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_aa6a3.dir/link.txt --verbose=1
+/usr/bin/cc -rdynamic CMakeFiles/cmTC_aa6a3.dir/CheckSymbolExists.c.o -o cmTC_aa6a3  -lnsl -lrt 
+CMakeFiles/cmTC_aa6a3.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x1b)：对‘inet_net_pton’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_aa6a3.dir/build.make:98: recipe for target 'cmTC_aa6a3' failed
+make[1]: *** [cmTC_aa6a3] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_aa6a3/fast' failed
+make: *** [cmTC_aa6a3/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef inet_net_pton
+  return ((int*)(&inet_net_pton))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the ioctlsocket exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_d9144/fast && /usr/bin/make  -f CMakeFiles/cmTC_d9144.dir/build.make CMakeFiles/cmTC_d9144.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_d9144.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_d9144.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘ioctlsocket’ undeclared (first use in this function); did you mean ‘socket’?
+   return ((int*)(&ioctlsocket))[argc];
+                   ^~~~~~~~~~~
+                   socket
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_d9144.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_d9144.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_d9144.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_d9144/fast' failed
+make: *** [cmTC_d9144/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef ioctlsocket
+  return ((int*)(&ioctlsocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the IoctlSocket exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_e11ed/fast && /usr/bin/make  -f CMakeFiles/cmTC_e11ed.dir/build.make CMakeFiles/cmTC_e11ed.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_e11ed.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_e11ed.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘IoctlSocket’ undeclared (first use in this function); did you mean ‘clock_t’?
+   return ((int*)(&IoctlSocket))[argc];
+                   ^~~~~~~~~~~
+                   clock_t
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_e11ed.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_e11ed.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_e11ed.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_e11ed/fast' failed
+make: *** [cmTC_e11ed/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef IoctlSocket
+  return ((int*)(&IoctlSocket))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strcmpi exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_44b12/fast && /usr/bin/make  -f CMakeFiles/cmTC_44b12.dir/build.make CMakeFiles/cmTC_44b12.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_44b12.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_44b12.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘strcmpi’ undeclared (first use in this function); did you mean ‘strcmp’?
+   return ((int*)(&strcmpi))[argc];
+                   ^~~~~~~
+                   strcmp
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_44b12.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_44b12.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_44b12.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_44b12/fast' failed
+make: *** [cmTC_44b12/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strcmpi
+  return ((int*)(&strcmpi))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the stricmp exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_bd639/fast && /usr/bin/make  -f CMakeFiles/cmTC_bd639.dir/build.make CMakeFiles/cmTC_bd639.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_bd639.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_bd639.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘stricmp’ undeclared (first use in this function); did you mean ‘strncmp’?
+   return ((int*)(&stricmp))[argc];
+                   ^~~~~~~
+                   strncmp
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_bd639.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_bd639.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_bd639.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_bd639/fast' failed
+make: *** [cmTC_bd639/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef stricmp
+  return ((int*)(&stricmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strncmpi exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_22154/fast && /usr/bin/make  -f CMakeFiles/cmTC_22154.dir/build.make CMakeFiles/cmTC_22154.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_22154.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_22154.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘strncmpi’ undeclared (first use in this function); did you mean ‘strncmp’?
+   return ((int*)(&strncmpi))[argc];
+                   ^~~~~~~~
+                   strncmp
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_22154.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_22154.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_22154.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_22154/fast' failed
+make: *** [cmTC_22154/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strncmpi
+  return ((int*)(&strncmpi))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the strnicmp exist failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_61f5d/fast && /usr/bin/make  -f CMakeFiles/cmTC_61f5d.dir/build.make CMakeFiles/cmTC_61f5d.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_61f5d.dir/CheckSymbolExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -fPIE -o CMakeFiles/cmTC_61f5d.dir/CheckSymbolExists.c.o -c /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c: In function ‘main’:
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: error: ‘strnicmp’ undeclared (first use in this function); did you mean ‘strncmp’?
+   return ((int*)(&strnicmp))[argc];
+                   ^~~~~~~~
+                   strncmp
+/home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:27:19: note: each undeclared identifier is reported only once for each function it appears in
+CMakeFiles/cmTC_61f5d.dir/build.make:77: recipe for target 'CMakeFiles/cmTC_61f5d.dir/CheckSymbolExists.c.o' failed
+make[1]: *** [CMakeFiles/cmTC_61f5d.dir/CheckSymbolExists.c.o] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_61f5d/fast' failed
+make: *** [cmTC_61f5d/fast] Error 2
+
+
+File /home/zgk/grpc/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <stdbool.h>
+#include <sys/types.h>
+#include <arpa/inet.h>
+#include <arpa/nameser.h>
+#include <netdb.h>
+#include <net/if.h>
+#include <netinet/in.h>
+#include <netinet/tcp.h>
+#include <signal.h>
+#include <stdlib.h>
+#include <string.h>
+#include <strings.h>
+#include <sys/ioctl.h>
+#include <sys/select.h>
+#include <sys/socket.h>
+#include <sys/time.h>
+#include <sys/uio.h>
+#include <time.h>
+#include <fcntl.h>
+#include <unistd.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef strnicmp
+  return ((int*)(&strnicmp))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+Determining if the function __system_property_get exists failed with the following output:
+Change Dir: /home/zgk/grpc/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):/usr/bin/make -f Makefile cmTC_b7c96/fast && /usr/bin/make  -f CMakeFiles/cmTC_b7c96.dir/build.make CMakeFiles/cmTC_b7c96.dir/build
+make[1]: 进入目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Building C object CMakeFiles/cmTC_b7c96.dir/CheckFunctionExists.c.o
+/usr/bin/cc -D_GNU_SOURCE -D_POSIX_C_SOURCE=199309L -D_XOPEN_SOURCE=600  -DCHECK_FUNCTION_EXISTS=__system_property_get -fPIE -o CMakeFiles/cmTC_b7c96.dir/CheckFunctionExists.c.o -c /usr/local/share/cmake-3.20/Modules/CheckFunctionExists.c
+Linking C executable cmTC_b7c96
+/usr/local/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b7c96.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=__system_property_get -rdynamic CMakeFiles/cmTC_b7c96.dir/CheckFunctionExists.c.o -o cmTC_b7c96  -lnsl -lrt 
+CMakeFiles/cmTC_b7c96.dir/CheckFunctionExists.c.o：在函数‘main’中：
+CheckFunctionExists.c:(.text+0x10)：对‘__system_property_get’未定义的引用
+collect2: error: ld returned 1 exit status
+CMakeFiles/cmTC_b7c96.dir/build.make:98: recipe for target 'cmTC_b7c96' failed
+make[1]: *** [cmTC_b7c96] Error 1
+make[1]: 离开目录“/home/zgk/grpc/build/CMakeFiles/CMakeTmp”
+Makefile:127: recipe for target 'cmTC_b7c96/fast' failed
+make: *** [cmTC_b7c96/fast] Error 2
+
+
+
